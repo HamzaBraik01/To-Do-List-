@@ -10,11 +10,6 @@ TaskFlow est une application de gestion des tâches conçue pour la start-up Tas
 - [User Stories](#user-stories)
 - [Technologies Utilisées](#technologies-utilisées)
 - [Installation](#installation)
-- [Utilisation](#utilisation)
-- [Déploiement](#déploiement)
-- [Accessibilité](#accessibilité)
-- [Contribuer](#contribuer)
-- [Licence](#licence)
 
 ## Fonctionnalités
 
