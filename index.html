@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-teal-500">
+    <div>
+        <nav class="bg-white px-8 py-8 shadow flex justify-between">
+            <div>
+                <span class="cursor-pointer text-2xl font-mono">
+                    <img class="h-14 inline" src="img/logo.png" alt="logo">
+                    Task<span class="text-teal-500">Flow</span> 
+                </span>
+            </div>
+            <div class="flex justify-between w-96 rounded-lg bg-white border-solid border-2 border-teal-500">
+                <input class="w-full border-none bg-transparent px-4 py-1 text-gray-900 outline-none" type="text" placeholder="Search">
+                <button class="m-2 rounded bg-teal-500 hover:bg-teal-600 px-4 py-2 text-white">Search</button>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="m-7 flex justify-evenly">
+        <button onclick="toggleModal()" id="AddTask" class="w-50 rounded bg-orange-500 hover:bg-orange-600 px-4 py-2 text-white">Add Task +</button>
+        <button id="AddMultiple" class="w-50 rounded bg-orange-500 hover:bg-orange-600 px-4 py-2 text-white">Add Multiple +</button>
+    </div>
+
+
+    <div class="w-full max-w-5xl m-auto">
+        <div class="flex justify-around mt-3">
+            <div id="todoCount" class="bg-gray-200 p-3 rounded">To Do: 0</div>
+            <div id="doingCount" class="bg-gray-200 p-3 rounded">Doing: 0</div>
+            <div id="doneCount" class="bg-gray-200 p-3 rounded">Done: 0</div>
+        </div>
+
+    
+        <div class="mt-3 grid grid-cols-3 gap-4">
+            <div>
+                <h2 class="text-center font-bold text-lg mb-3">To Do</h2>
+                <div id="todoColumn" class="bg-gray-50 p-4 rounded-lg shadow-md"></div>
+            </div>
+            <div>
+                <h2 class="text-center font-bold text-lg mb-3">Doing</h2>
+                <div id="doingColumn" class="bg-gray-50 p-4 rounded-lg shadow-md"></div>
+            </div>
+            <div>
+                <h2 class="text-center font-bold text-lg mb-3">Done</h2>
+                <div id="doneColumn" class="bg-gray-50 p-4 rounded-lg shadow-md"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white p-5 rounded-lg w-full max-w-md">
+            <h2 class="text-xl font-bold mb-4">New Task</h2>
+            <form id="taskFormContent" class="space-y-4">
+                <input type="text" id="taskTitle" class="w-full p-2 border rounded" placeholder="Titre" required>
+                <textarea id="taskDescription" class="w-full p-2 border rounded" placeholder="Description"></textarea>
+                <select id="taskStatus" class="w-full p-2 border rounded" required>
+                    <option value="todo">To Do</option>
+                    <option value="doing">Doing</option>
+                    <option value="done">Done</option>
+                </select>
+                <input type="date" id="taskDate" class="w-full p-2 border rounded" required>
+                <select id="taskPriority" class="w-full p-2 border rounded" required>
+                    <option value="P1">Priorité 1</option>
+                    <option value="P2">Priorité 2</option>
+                    <option value="P3">Priorité 3</option>
+                </select>
+                <button type="submit" class="w-full bg-teal-500 text-white py-2 rounded">Save</button>
+            </form>
+            <button onclick="toggleModal()" class="w-full bg-gray-300 text-gray-800 py-2 rounded mt-3">Annuler</button>
+        </div>
+    </div>
+
+    <script src="code.js"></script>
+</body>
+</html>
