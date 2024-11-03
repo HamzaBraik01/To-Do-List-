@@ -18,17 +18,7 @@ TaskFlow est une application de gestion des tâches conçue pour la start-up Tas
 - **Affichage Dynamique des Tâches** : Affichage des tâches sous forme de liste avec des indicateurs de priorité colorés (P1 en rouge, P2 en orange, P3 en vert).
 - **Mise à Jour du Statut** : Changement de statut d'une tâche pour une meilleure organisation.
 - **Statistiques des Tâches** : Affichage des statistiques des tâches (nombre total, par statut, etc.).
-- **Tri et Filtrage** : Tri des tâches par date d'échéance et filtrage par priorité.
-- **Animations** : Utilisation d'animations JavaScript pour enrichir l'expérience utilisateur lors de l'ajout et de la suppression des tâches.
-- **Conformité à l'Accessibilité** : Respect des normes d'accessibilité WCAG pour les utilisateurs ayant des besoins spécifiques.
 
-### Fonctionnalités Bonus
-
-- **Ajout de Tâches Multiples** : Modal permettant d'ajouter plusieurs tâches en une seule fois.
-- **Drag and Drop pour le Changement de Statut** : Utilisation de la fonctionnalité de glisser-déposer pour mettre à jour le statut d'une tâche.
-- **Modification et Suppression de Tâches** : Possibilité de modifier ou supprimer les tâches existantes.
-- **Recherche de Tâches** : Barre de recherche pour trouver rapidement des tâches par titre ou mots-clés.
-- **Tri Automatique** : Algorithme de tri automatique des tâches par date d'échéance ou priorité.
 
 ## User Stories
 
