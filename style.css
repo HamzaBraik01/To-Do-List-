@@ -1,0 +1,51 @@
+
+body {
+    font-size: 16px; 
+}
+
+
+@media (min-width: 1280px) {
+    body {
+        font-size: 18px; 
+    }
+
+    .flex {
+        flex-direction: row; 
+    }
+
+    
+}
+
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    body {
+        font-size: 17px; 
+    }
+
+    
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 16px; 
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    
+}
+
+
+@media (max-width: 767px) {
+    body {
+        font-size: 15px; 
+    }
+
+    .grid {
+        grid-template-columns: 1fr; 
+    }
+
+    
+}
