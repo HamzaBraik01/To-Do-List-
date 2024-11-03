@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskFlow</title>
+    <link rel="stylesheet" href="style.css"> 
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-teal-500">
+<body class="bg-teal-500 pb-24"> 
     <div>
         <nav class="bg-white px-8 py-8 shadow flex justify-between">
             <div>
@@ -15,29 +16,25 @@
                     Task<span class="text-teal-500">Flow</span> 
                 </span>
             </div>
-            <div class="flex justify-between w-96 rounded-lg bg-white border-solid border-2 border-teal-500">
-                <input class="w-full border-none bg-transparent px-4 py-1 text-gray-900 outline-none" type="text" placeholder="Search">
-                <button class="m-2 rounded bg-teal-500 hover:bg-teal-600 px-4 py-2 text-white">Search</button>
+            <div class="flex items-center">
+                <div class="flex justify-between w-96 rounded-lg bg-white border-2 border-teal-500">
+                    <input class="w-full border-none bg-transparent px-4 text-gray-900 outline-none py-2" type="text" placeholder="Search">
+                    <button class="rounded bg-teal-500 hover:bg-teal-600 px-4 py-2 text-white">Search</button>
+                </div>
+                <div class="ml-4">
+                    <button onclick="toggleModal('new')" id="AddTask" class="rounded bg-orange-500 hover:bg-orange-600 px-4 py-2 text-white">Add Task +</button>
+                </div>
             </div>
         </nav>
     </div>
-
-
-    <div class="m-7 flex justify-evenly">
-        <button onclick="toggleModal()" id="AddTask" class="w-50 rounded bg-orange-500 hover:bg-orange-600 px-4 py-2 text-white">Add Task +</button>
-        <button id="AddMultiple" class="w-50 rounded bg-orange-500 hover:bg-orange-600 px-4 py-2 text-white">Add Multiple +</button>
-    </div>
-
-
-    <div class="w-full max-w-5xl m-auto">
+    
+    <div class="w-full max-w-5xl m-auto mb-16"> 
         <div class="flex justify-around mt-3">
             <div id="todoCount" class="bg-gray-200 p-3 rounded">To Do: 0</div>
             <div id="doingCount" class="bg-gray-200 p-3 rounded">Doing: 0</div>
             <div id="doneCount" class="bg-gray-200 p-3 rounded">Done: 0</div>
         </div>
-
-    
-        <div class="mt-3 grid grid-cols-3 gap-4">
+        <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div>
                 <h2 class="text-center font-bold text-lg mb-3">To Do</h2>
                 <div id="todoColumn" class="bg-gray-50 p-4 rounded-lg shadow-md"></div>
@@ -52,10 +49,10 @@
             </div>
         </div>
     </div>
-
-    <div id="taskForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+    
+    <div id="taskForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
         <div class="bg-white p-5 rounded-lg w-full max-w-md">
-            <h2 class="text-xl font-bold mb-4">New Task</h2>
+            <h2 id="formTitle" class="text-xl font-bold mb-4">New Task</h2>
             <form id="taskFormContent" class="space-y-4">
                 <input type="text" id="taskTitle" class="w-full p-2 border rounded" placeholder="Titre" required>
                 <textarea id="taskDescription" class="w-full p-2 border rounded" placeholder="Description"></textarea>
@@ -64,7 +61,16 @@
                     <option value="doing">Doing</option>
                     <option value="done">Done</option>
                 </select>
-                <input type="date" id="taskDate" class="w-full p-2 border rounded" required>
+                <div class="flex space-x-4">
+                    <div class="w-1/2">
+                        <label for="taskStartDate" class="block text-gray-700">Start Date</label>
+                        <input type="date" id="taskStartDate" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="w-1/2">
+                        <label for="taskDueDate" class="block text-gray-700">Due Date</label>
+                        <input type="date" id="taskDueDate" class="w-full p-2 border rounded" required>
+                    </div>
+                </div>
                 <select id="taskPriority" class="w-full p-2 border rounded" required>
                     <option value="P1">Priorité 1</option>
                     <option value="P2">Priorité 2</option>
@@ -72,11 +78,21 @@
                 </select>
                 <button type="submit" class="w-full bg-teal-500 text-white py-2 rounded">Save</button>
             </form>
-            <button onclick="toggleModal()" class="w-full bg-gray-300 text-gray-800 py-2 rounded mt-3">Annuler</button>
+            <button onclick="toggleModal('cancel')" class="w-full bg-gray-300 text-gray-800 py-2 rounded mt-3">Annuler</button>
         </div>
     </div>
+    
+    <footer class="bg-white text-center py-4 shadow fixed inset-x-0 bottom-0 z-20">
+        <div class="text-gray-700">
+            © 2024 TaskFlow. All rights reserved.
+        </div>
+        <div class="text-teal-500 mt-2">
+            <a href="#" class="hover:underline">Privacy Policy</a> | 
+            <a href="#" class="hover:underline">Terms of Service</a> | 
+            <a href="#" class="hover:underline">Contact Us</a>
+        </div>
+    </footer>
 
     <script src="code.js"></script>
 </body>
 </html>
-
